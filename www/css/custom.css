@@ -1,0 +1,32 @@
+.black-overlay {
+  position: relative;
+}
+.black-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.trainer_name {
+  padding: 14px;
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+/* #trainerForm {
+  width: 100%;
+} */
+.trainer_form_container {
+  width: 100%;
+}
+#trainer_date {
+  width: 92%;
+  display: block;
+  padding: 10px;
+  margin-left: 1px;
+  margin-bottom: 20px;
+}
