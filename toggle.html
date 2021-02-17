@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png" />
+    <title>mobili - mobile template</title>
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet" />
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.custom.js"></script>
+    <script src="cordova.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+</head>
+
+<body id="mobile_wrap">
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-reveal">
+        <!-- Slider -->
+        <div class="swiper-container-subnav multinav">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <nav class="main_nav_underline">
+                        <ul>
+                            <li>
+                                <a href="index.html"><img src="images/icons/gray/home.png" alt="" title="" /><span>Home</span></a>
+                            </li>
+                            <li>
+                                <a href="about.html"><img src="images/icons/gray/mobile.png" alt="" title="" /><span>About</span></a>
+                            </li>
+                            <li>
+                                <a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Login</span></a>
+                                <li>
+                                    <a href="features.html"><img src="images/icons/gray/features.png" alt="" title="" /><span>Features</span></a>
+                                </li>
+
+
+                            </li>
+                            <!--<li>
+                  <a href="team.html"
+                    ><img
+                      src="images/icons/gray/users.png"
+                      alt=""
+                      title=""
+                    /><span>Team</span></a
+                  >
+                </li>-->
+                            <li>
+                                <a href="coming-home.html"><img src="images/icons/gray/blog.png" alt="" title="" /><span>Coming Soon</span></a>
+                            </li>
+
+                            <!--<li>
+                                <a href="photos.html"><img src="images/icons/gray/photos.png" alt="" title="" /><span>Photos</span></a>
+                            </li>
+                            <li>
+                                <a href="videos.html"><img src="images/icons/gray/video.png" alt="" title="" /><span>Videos</span></a>
+                            </li>
+                            <li>
+                                <a href="music.html"><img src="images/icons/gray/music.png" alt="" title="" /><span>Music</span></a>
+                            </li>-->
+
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/shop.png" alt="" title="" /><span>Shop</span></a>
+                            </li>
+                            <!--<li class="subnav opensubnav">
+                                <img src="images/icons/gray/categories.png" alt="" title="" /><span>Sub level menu</span>
+                            </li>-->
+                            <li>
+                                <a href="cart.html"><img src="images/icons/gray/cart.png" alt="" title="" /><span>Cart</span></a>
+                            </li>
+
+                            <!--<li>
+                                <a href="tables.html"><img src="images/icons/gray/tables.png" alt="" title="" /><span>Tables</span></a>
+                            </li>-->
+
+                            <li>
+                                <a href="form.html"><img src="images/icons/gray/form.png" alt="" title="" /><span>Custom Form</span></a>
+                            </li>
+
+                            <li>
+                                <a href="tel:012345678"><img src="images/icons/gray/phone.png" alt="" title="" /><span>Call now!</span></a>
+                            </li>
+                            <li>
+                                <a href="contact.html"><img src="images/icons/gray/contact.png" alt="" title="" /><span>Contact</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--<div class="swiper-slide">
+                    <div class="subnav_header backtonav">
+                        <img src="images/icons/gray/back.png" alt="" title="" /><span>BACK TO MAIN MENU</span>
+                    </div>
+                    <nav class="main_nav_underline">
+                        <ul>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/car.png" alt="" title="" /><span>Cars</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/bus.png" alt="" title="" /><span>Buses</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/bike.png" alt="" title="" /><span>Bikes</span></a>
+                            </li>
+
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/drink.png" alt="" title="" /><span>Drinks</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/food.png" alt="" title="" /><span>Food</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/orders.png" alt="" title="" /><span>Clothes</span></a>
+                            </li>
+
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/rocket.png" alt="" title="" /><span>Rockets</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/briefcase.png" alt="" title="" /><span>Accessories</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/gift.png" alt="" title="" /><span>Gifts</span></a>
+                            </li>
+                            <li class="subnav opensubsubnav">
+                                <img src="images/icons/gray/categories.png" alt="" title="" /><span>Third sublevel menu</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>-->
+                <!--<div class="swiper-slide">
+                    <div class="subnav_header backtosubnav">
+                        <img src="images/icons/gray/back.png" alt="" title="" /><span>BACK TO 2 SUBLEVEL MENU</span>
+                    </div>
+                    <nav class="main_nav_underline">
+                        <ul>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/car.png" alt="" title="" /><span>Subcategory 01</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/bus.png" alt="" title="" /><span>Subcategory 02</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/bike.png" alt="" title="" /><span>Subcategory 03</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/drink.png" alt="" title="" /><span>Subcategory 04</span></a>
+                            </li>
+                            <li>
+                                <a href="shop.html"><img src="images/icons/gray/food.png" alt="" title="" /><span>Subcategory 05</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-right panel-reveal">
+        <div class="user_login_info">
+            <div class="user_thumb">
+                <div class="user_details">
+                    <p>Welcome, <span>User</span></p>
+                </div>
+                <div class="user_avatar">
+                    <img src="images/avatar3.jpg" alt="" title="" />
+                </div>
+            </div>
+
+            <nav class="user-nav">
+                <ul>
+                    <li>
+                        <a href="features.html"><img src="images/icons/gray/settings.png" alt="" title="" /><span>Account Settings</span></a>
+                    </li>
+                    <li>
+                        <a href="features.html"><img src="images/icons/gray/briefcase.png" alt="" title="" /><span>My Account</span></a>
+                    </li>
+                    <li>
+                        <a href="features.html"><img src="images/icons/gray/message.png" alt="" title="" /><span>Messages</span><strong>12</strong></a>
+                    </li>
+                    <li>
+                        <a href="features.html"><img src="images/icons/gray/love.png" alt="" title="" /><span>Favorites</span
+                ><strong>5</strong></a>
+            </li>
+            <li>
+              <a href="index.html"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Logout</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages">
+                <div data-page="toggle" class="page">
+                    <div class="page-content">
+                        <div class="navbar navbar--fixed navbar--fixed-top navbar--bg">
+                            <div class="navbar__col navbar__col--title">
+                                <a href="index.html">My Petsy Home</a>
+                            </div>
+                            <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                                <a href="cart.html"><img src="images/icons/white/cart.png" alt="" title="" /><span class="navbar__icon-bullet">3</span></a>
+                            </div>
+                            <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                                <a href="#" data-panel="right" class="open-panel"><img src="images/icons/white/user.png" alt="" title="" /></a>
+                            </div>
+                            <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                                <a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/menu.png" alt="" title="" /></a>
+                            </div>
+                        </div>
+                        <div id="pages_maincontent">
+                            <h2 class="page_title">Frequently Asked Questions</h2>
+                            <div class="page_single layout_fullwidth_padding">
+                                <div class="accordion">
+                                    <div class="tabs">
+                                        <input type="radio" name="faqtabs" class="tabradio" id="tab1" checked="checked" />
+                                        <label class="tablabel tablabel--12" for="tab1">Dog</label>
+                                        <div class="tab">
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc1" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc1">Why is my dog’s nose dry? <span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Dog’s nose is an indicator of health. Increased body temperature can make the dogs nose go dry. A checkup is required to check any underlying issue.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc2" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc2">Why does my dog eat poop? <span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Eating of poop is called as coprophagy. It happens in a condition called as pika. There is a calcium and phosphorous imbalance in the body which leads the dogs to eat its poop to fulfill their dietary requirements
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc3" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc3">Why does my dog stare at me? <span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Dogs staring at owners can have different indications. Either they want something, food, treat or it can be your time too, or it can happen in aggressive breeds too
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc4" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc4">Why do dogs eat grass? <span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Grass helps to settle down the acids in the stomach. Most of the time dogs regurgitate or vomit to remove the excess acid after eating grass
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc5" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc5">What vaccinations should my dog have? <span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Distemper, hepatitis, leptospira, parvo virus, parainfluenza, kennel cough, rabies
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc6" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc6">How often should you bathe a dog? <span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Bathing depends on the climate zone you stay in. ideally once weekly to once in 15 days is fine
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc7" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc7">How to muzzle your pet ( to keep an injured pet
+                            biting you)<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Dog muzzles are available commercially and can be used , homemade tape muzzles can be used too
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc8" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc8">How to stop bleeding and apply a basic pressure
+                            wrap in case of emergency?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Pressure can be applied to the bleeding points, cold pack application can be done to control bleeding
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc9" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc9">How to perform basic CPR on your pet?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>Donot attempt this without proper training</p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc10" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc10">In case of emergency what can be used if dog had a
+                            paw cut?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Turmeric or potassium permagnate crystals can be used to stop paw bleeding
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="radio" name="faqtabs" class="tabradio" id="tab2" />
+                                        <label class="tablabel tablabel--12" for="tab2">Cat</label>
+                                        <div class="tab">
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc11" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc11">What safety should we take when we have cats?<span
+                            ></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Donot keep the windows open or put safety nets when you have cats indoors. There are a few plants which are toxic to cats
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc12" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc12">What can be used in case of emergency if a cat had
+                            a paw cut?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>Turmeric can be applied to the paw cut</p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc13" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc13">What to do when our cat had a difficulty in
+                            breathing?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Veterinary intervention is required to check the cause of respiratory issues. Keep your pet in a well-ventilatedarea, temperature should not be too high. Keep your pet in A/C for a while if the temperatures are too high
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc14" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc14">What to do when cat face road traffic accidents and
+                            other traumatic injuries?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        There are local ngo’s who help to treat the stray cat population. Help can be seeked from such ngo’s, the injured animal can be taken to vet clinics who have emergency care facilities available
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc15" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc15">How can we get to know is our cat is facing
+                            aortic-thrombo-embolism?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Echocardiography and ultrasound helps to diagnose such cases
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc16" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc16">How to prevent infected wounds and bite
+                            abscesses?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Hygiene and daily dressing is required to contain an infection. Antibiotics might be required to treat severely infected wounds
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc17" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc17">Why do s get high temperature and what to do in
+                            that case ?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Temperature can be an indicator of an active infection. Get your pet checked from your veterinarian to diagnose the infection
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="accordion__item">
+                                                <input class="accordion__input" id="acc18" type="radio" name="accordion" />
+                                                <label class="accordion__label" for="acc18">How cats get poisons and how can we know if our
+                            cats has the poison ?<span></span
+                          ></label>
+                                                <div class="accordion__content">
+                                                    <p>
+                                                        Poisoning can happen due to various reasons chemical, vapors, or plant based toxins. There are various symptoms based on different substances, which lead to poisoning. Few common ones are vomiting, diarrhea, incoordination in movements, fits, bleeding
+                                                        from mouth nose and stools
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- cats -->
+
+                                    <!-- end of all faqs -->
+                                </div>
+                            </div>
+                            <!--end of page single-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Popup -->
+    <div class="popup popup-login">
+        <div class="content-block">
+            <h4>LOGIN</h4>
+            <div class="loginform">
+                <form id="LoginForm" method="post">
+                    <input type="text" name="Username" value="" class="form_input required" placeholder="username" />
+                    <input type="password" name="Password" value="" class="form_input required" placeholder="password" />
+                    <div class="forgot_pass">
+                        <a href="#" data-popup=".popup-forgot" class="open-popup">Forgot Password?</a>
+                    </div>
+                    <input type="submit" name="submit" class="form_submit" id="submit" value="SIGN IN" />
+                </form>
+                <div class="signup_bottom">
+                    <p>Don't have an account?</p>
+                    <a href="#" data-popup=".popup-signup" class="open-popup">SIGN UP</a>
+                </div>
+            </div>
+            <div class="close_popup_button">
+                <a href="#" class="close-popup" data-popup=".popup-login"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Popup -->
+    <div class="popup popup-signup">
+        <div class="content-block">
+            <h4>REGISTER</h4>
+            <div class="loginform">
+                <form id="RegisterForm" method="post">
+                    <input type="text" name="Username" value="" class="form_input required" placeholder="Username" />
+                    <input type="text" name="Email" value="" class="form_input required" placeholder="Email" />
+                    <input type="password" name="Password" value="" class="form_input required" placeholder="Password" />
+                    <input type="submit" name="submit" class="form_submit" id="submitregister" value="SIGN UP" />
+                </form>
+                <h5>- OR REGISTER WITH A SOCIAL ACCOUNT -</h5>
+                <div class="signup_social">
+                    <a href="http://www.facebook.com/" class="signup_facebook">FACEBOOK</a>
+                    <a href="http://www.twitter.com/" class="signup_twitter">TWITTER</a>
+                </div>
+            </div>
+            <div class="close_popup_button">
+                <a href="#" class="close-popup" data-popup=".popup-signup"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Popup -->
+    <div class="popup popup-forgot">
+        <div class="content-block">
+            <h4>FORGOT PASSWORD</h4>
+            <div class="loginform">
+                <form id="ForgotForm" method="post">
+                    <input type="text" name="Email" value="" class="form_input required" placeholder="email" />
+                    <input type="submit" name="submit" class="form_submit" id="submitforgot" value="RESEND PASSWORD" />
+                </form>
+                <div class="signup_bottom">
+                    <p>
+                        Check your email and follow the instructions to reset your password.
+                    </p>
+                </div>
+            </div>
+            <div class="close_popup_button">
+                <a href="#" class="close-popup" data-popup=".popup-forgot"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Icons Popup -->
+    <div class="popup popup-social">
+        <div class="content-block">
+            <h4>Social Share</h4>
+            <p>
+                Share icons solution that allows you share and increase your social popularity.
+            </p>
+            <ul class="social_share">
+                <li>
+                    <a href="http://twitter.com/"><img src="images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="http://www.facebook.com/"
+              ><img
+                src="images/icons/black/facebook.png"
+                alt=""
+                title=""
+              /><span>FACEBOOK</span></a>
+                </li>
+                <li>
+                    <a href="http://plus.google.com"><img src="images/icons/black/gplus.png" alt="" title="" /><span>GOOGLE</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="http://www.dribbble.com/"
+              ><img
+                src="images/icons/black/dribbble.png"
+                alt=""
+                title=""
+              /><span>DRIBBBLE</span></a>
+                </li>
+                <li>
+                    <a href="http://www.linkedin.com/"><img src="images/icons/black/linkedin.png" alt="" title="" /><span>LINKEDIN</span></a>
+                </li>
+                <li>
+                    <a href="http://www.pinterest.com/"><img src="images/icons/black/pinterest.png" alt="" title="" /><span>PINTEREST</span></a>
+                </li>
+            </ul>
+            <div class="close_popup_button">
+                <a href="#" class="close-popup" data-popup=".popup-social"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
