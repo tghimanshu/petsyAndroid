@@ -1,91 +1,167 @@
+<script>
+if (
+  !window.localStorage.getItem("x-auth")
+) {
+  window.location = "";
+}
+</script>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png" />
+    <link
+      rel="apple-touch-startup-image"
+      href="images/apple-touch-startup-image-640x920.png"
+    />
     <title>My Petsy Home- index</title>
     <link rel="stylesheet" href="css/swiper.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/custom.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Hello World</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.custom.js"></script>
+    <script src="cordova.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+  <script src="js/index.js"></script>
+  </head>
 
-<body id="mobile_wrap">
+  <body id="mobile_wrap">
     <div class="panel-overlay"></div>
 
     <div class="panel panel-left panel-reveal">
-        <!-- Slider -->
-        <div class="swiper-container-subnav multinav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <nav class="main_nav_underline">
-                        <ul>
-                            <li>
-                                <a href="index.html"><img src="images/icons/gray/home.png" alt="" title="" /><span>Home</span></a>
-                            </li>
-                            <!--<li>
+      <!-- Slider -->
+      <div class="swiper-container-subnav multinav">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <nav class="main_nav_underline">
+              <ul>
+                <li>
+                  <a href="index.html"
+                    ><img
+                      src="images/icons/gray/home.png"
+                      alt=""
+                      title=""
+                    /><span>Home</span></a
+                  >
+                </li>
+                <!--<li>
                                 <a href="about.html"><img src="images/icons/gray/mobile.png" alt="" title="" /><span>About</span></a>
                             </li>-->
-                            <li>
-                                <a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Login</span></a>
-                            </li>
-                            <li>
-                                <a href="features.html"><img src="images/icons/gray/features.png" alt="" title="" /><span>Features</span></a>
-                            </li>
+                <li>
+                  <a href="#" data-popup=".popup-login" class="open-popup"
+                    ><img
+                      src="images/icons/gray/lock.png"
+                      alt=""
+                      title=""
+                    /><span>Login</span></a
+                  >
+                </li>
+                <li>
+                  <a href="features.html"
+                    ><img
+                      src="images/icons/gray/features.png"
+                      alt=""
+                      title=""
+                    /><span>Features</span></a
+                  >
+                </li>
 
-                            <li>
-                                <a href="coming-home.html"><img src="images/icons/gray/blog.png" alt="" title="" /><span>Coming Soon</span></a>
-                            </li>
+                <li>
+                  <a href="coming-home.html"
+                    ><img
+                      src="images/icons/gray/blog.png"
+                      alt=""
+                      title=""
+                    /><span>Coming Soon</span></a
+                  >
+                </li>
 
-
-
-                            <li>
-                                <a href="form.html"><img src="images/icons/gray/form.png" alt="" title="" /><span>Customer Form</span></a>
-                            </li>
-
-                            <li>
-                                <a href="tel:012345678"><img src="images/icons/gray/phone.png" alt="" title="" /><span>Call now!</span></a>
-                            </li>
-                            <li>
-                                <a href="contact.html"><img src="images/icons/gray/contact.png" alt="" title="" /><span>Contact</span></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-            </div>
+                <li>
+                  <a href="mailto:mypetsyhome@gmail.com"
+                    ><img
+                      src="images/icons/gray/phone.png"
+                      alt=""
+                      title=""
+                    /><span>Mail Us!</span></a
+                  >
+                </li>
+                <li>
+                  <a href="contact.html"
+                    ><img
+                      src="images/icons/gray/contact.png"
+                      alt=""
+                      title=""
+                    /><span>Contact</span></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="panel panel-right panel-reveal">
-        <div class="user_login_info">
-            <div class="user_thumb">
-                <div class="user_details">
-                    <p>Welcome, <span>User</span></p>
-                </div>
-                <div class="user_avatar">
-                    <img src="images/avatar3.jpg" alt="" title="" />
-                </div>
-            </div>
+      <div class="user_login_info">
+        <div class="user_thumb">
+          <div class="user_details">
+            <p>Welcome, <span>User</span></p>
+          </div>
+          <div class="user_avatar">
+            <img src="images/avatar3.jpg" alt="" title="" />
+          </div>
+        </div>
 
-            <nav class="user-nav">
-                <ul>
-                    <li>
-                        <a href="features.html"><img src="images/icons/gray/settings.png" alt="" title="" /><span>Account Settings</span></a>
-                    </li>
-                    <li>
-                        <a href="features.html"><img src="images/icons/gray/briefcase.png" alt="" title="" /><span>My Account</span></a>
-                    </li>
-                    <li>
-                        <a href="features.html"><img src="images/icons/gray/message.png" alt="" title="" /><span>Messages</span><strong>12</strong></a>
-                    </li>
-                    <li>
-                        <a href="features.html"><img src="images/icons/gray/love.png" alt="" title="" /><span>Favorites</span
+        <nav class="user-nav">
+          <ul>
+            <li>
+              <a href="features.html"
+                ><img
+                  src="images/icons/gray/settings.png"
+                  alt=""
+                  title=""
+                /><span>Account Settings</span></a
+              >
+            </li>
+            <li>
+              <a href="features.html"
+                ><img
+                  src="images/icons/gray/briefcase.png"
+                  alt=""
+                  title=""
+                /><span>My Account</span></a
+              >
+            </li>
+            <li>
+              <a href="features.html"
+                ><img
+                  src="images/icons/gray/message.png"
+                  alt=""
+                  title=""
+                /><span>Messages</span><strong>12</strong></a
+              >
+            </li>
+            <li>
+              <a href="features.html"
+                ><img src="images/icons/gray/love.png" alt="" title="" /><span
+                  >Favorites</span
                 ><strong>5</strong></a
               >
             </li>
@@ -108,7 +184,7 @@
             <div class="page-content">
               <div class="navbar navbar--fixed navbar--fixed-top">
                 <div class="navbar__col navbar__col--title">
-                  <a href="index.html">Petsy Home</a>
+                  <a href="index.html">My Petsy Home</a>
                 </div>
                 <div
                   class="navbar__col navbar__col--icon navbar__col--icon-right"
@@ -126,51 +202,38 @@
                     class="swiper-slide black-overlay"
                     style="background-image: url(images/cat_start.jpg)"
                   >
-                    <div class="slider-caption">
-                      <h2 data-swiper-parallax="-100%" class="title--white">
-                        Pet's Health is our Wealth
+                    <div class="slider-caption coming-soon">
+                      <h2
+                        data-swiper-parallax="-100%"
+                        class="title--white"
+                        style="text-align: center"
+                      >
+                        THIS PAGE IS UNDER CONSTRUCTION
                       </h2>
-                      <p data-swiper-parallax="-30%" class="text--white">
-                        We understand how important your pet is to you so we
-                        provide fast and trustworthy health solutions for your
-                        pets.
+                      <p
+                        data-swiper-parallax="-30%"
+                        class="text--white"
+                        style="text-align: center"
+                      >
+                        The following page/feature would be coming soon to the
+                        app. Please look forward for the updates on our new
+                        features and changes.
                       </p>
                       <a
                         href="#"
                         data-swiper-parallax="-60%"
                         data-popup=".popup-login"
                         class="open-popup slider-caption__more"
-                        >Get Started</a
+                        style="
+                          display: block;
+                          width: fit-content;
+                          margin: 0 auto;
+                        "
+                        >Notify Me</a
                       >
                     </div>
                   </div>
-
-                  <div
-                    class="swiper-slide black-overlay"
-                    style="background-image: url(images/dog_start.jpg)"
-                  >
-                    <div class="slider-caption">
-                      <h2 data-swiper-parallax="-100%" class="title--white">
-                        Pet's Day Care
-                      </h2>
-                      <p data-swiper-parallax="-30%" class="text--white">
-                        We care for your pet and treat them like our own
-                        starting from day care to grooming
-                      </p>
-                      <a
-                        href="#"
-                        data-swiper-parallax="-60%"
-                        data-popup=".popup-login"
-                        class="open-popup slider-caption__more"
-                        >Get Started</a
-                      >
-                    </div>
-                  </div>
-                  
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
               </div>
             </div>
           </div>
@@ -181,20 +244,22 @@
     <!-- Login Popup -->
     <div class="popup popup-login">
       <div class="content-block">
-        <center><img src="app-logo.png" alt="app-logo" width="170vw" height="150vh" /></center>
+        <center>
+          <img src="app-logo.png" alt="app-logo" width="170vw" height="150vh" />
+        </center>
         <h4>LOGIN</h4>
         <div class="loginform">
-          <form id="LoginForm" method="post">
+          <form id="loginForm" method="post">
             <input
-              type="text"
-              name="Username"
+              type="email"
+              id="l_email"
               value=""
               class="form_input required"
-              placeholder="username"
+              placeholder="Email"
             />
             <input
               type="password"
-              name="Password"
+              id="l_password"
               value=""
               class="form_input required"
               placeholder="password"
@@ -206,15 +271,17 @@
             </div>
             <input
               type="submit"
-              name="submit"
+              id="l_submit"
               class="form_submit"
-              id="submit"
               value="SIGN IN"
             />
           </form>
           <div class="signup_bottom">
             <p>Don't have an account?</p>
-            <a href="#" data-popup=".popup-signup" class="open-popup"
+            <a
+              href="#"
+              data-popup=".popup-signup"
+              class="open-popup button_full"
               >SIGN UP</a
             >
           </div>
@@ -244,33 +311,33 @@
             <label class="tablabel tablabel--12" for="tab1">Cat</label>
             <div class="tab">
               <div class="loginform">
-                <form id="RegisterForm" method="post">
+                <form id="catRegisterForm">
+                  <input type="hidden" value="cat" id="cr_type" />
                   <input
                     type="text"
-                    name="Username"
                     value=""
+                    id="cr_name"
                     class="form_input required"
-                    placeholder="Username"
+                    placeholder="Name"
                   />
                   <input
                     type="text"
-                    name="Email"
+                    id="cr_email"
                     value=""
                     class="form_input required"
                     placeholder="Email"
                   />
                   <input
                     type="password"
-                    name="Password"
+                    id="cr_password"
                     value=""
                     class="form_input required"
                     placeholder="Password"
                   />
                   <input
                     type="submit"
-                    name="submit"
+                    id="cr_submit"
                     class="form_submit"
-                    id="submitregister"
                     value="SIGN UP"
                   />
                 </form>
@@ -281,32 +348,35 @@
             <label class="tablabel tablabel--12" for="tab2">Dog</label>
             <div class="tab">
               <div class="loginform">
-                <form id="RegisterForm" method="post">
+                <form id="dogRegisterForm">
+                  <input type="hidden" value="dog" id="dr_type" />
                   <input
                     type="text"
-                    name="Username"
                     value=""
+                    id="dr_name"
                     class="form_input required"
-                    placeholder="Username"/>
+                    placeholder="Name"
+                  />
                   <input
                     type="text"
-                    name="Email"
+                    id="dr_email"
                     value=""
                     class="form_input required"
                     placeholder="Email"
                   />
                   <input
                     type="password"
-                    name="Password"
+                    id="dr_password"
                     value=""
                     class="form_input required"
-                    placeholder="Password"/>
+                    placeholder="Password"
+                  />
                   <input
                     type="submit"
-                    name="submit"
+                    id="dr_submit"
                     class="form_submit"
-                    id="submitregister"
-                    value="SIGN UP"/>
+                    value="SIGN UP"
+                  />
                 </form>
               </div>
             </div>
@@ -315,7 +385,8 @@
 
         <div class="close_popup_button">
           <a href="#" class="close-popup" data-popup=".popup-signup">
-            <img src="images/icons/black/menu_close.png" alt="" title=""/></a>
+            <img src="images/icons/black/menu_close.png" alt="" title=""
+          /></a>
         </div>
       </div>
     </div>
@@ -378,10 +449,13 @@
                 src="images/icons/black/facebook.png"
                 alt=""
                 title=""
-              /><span>FACEBOOK</span></a>
-                    </li>
-                    <li>
-                        <a href="http://plus.google.com"><img src="images/icons/black/gplus.png" alt="" title="" /><span>GOOGLE</span
+              /><span>FACEBOOK</span></a
+            >
+          </li>
+          <li>
+            <a href="http://plus.google.com"
+              ><img src="images/icons/black/gplus.png" alt="" title="" /><span
+                >GOOGLE</span
               ></a
             >
           </li>
@@ -391,25 +465,34 @@
                 src="images/icons/black/dribbble.png"
                 alt=""
                 title=""
-              /><span>DRIBBBLE</span></a>
-                    </li>
-                    <li>
-                        <a href="http://www.linkedin.com/"><img src="images/icons/black/linkedin.png" alt="" title="" /><span>LINKEDIN</span></a>
-                    </li>
-                    <li>
-                        <a href="http://www.pinterest.com/"><img src="images/icons/black/pinterest.png" alt="" title="" /><span>PINTEREST</span></a>
-                    </li>
-                </ul>
-                <div class="close_popup_button">
-                    <a href="#" class="close-popup" data-popup=".popup-social"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
-                </div>
+              /><span>DRIBBBLE</span></a
+            >
+          </li>
+          <li>
+            <a href="http://www.linkedin.com/"
+              ><img
+                src="images/icons/black/linkedin.png"
+                alt=""
+                title=""
+              /><span>LINKEDIN</span></a
+            >
+          </li>
+          <li>
+            <a href="http://www.pinterest.com/"
+              ><img
+                src="images/icons/black/pinterest.png"
+                alt=""
+                title=""
+              /><span>PINTEREST</span></a
+            >
+          </li>
+        </ul>
+        <div class="close_popup_button">
+          <a href="#" class="close-popup" data-popup=".popup-social"
+            ><img src="images/icons/black/menu_close.png" alt="" title=""
+          /></a>
         </div>
+      </div>
     </div>
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/jquery.custom.js"></script>
-</body>
-
+    
 </html>

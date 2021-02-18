@@ -1,3 +1,10 @@
+<script>
+if (
+  !window.localStorage.getItem("x-auth")
+) {
+  window.location = "";
+}
+</script>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,14 +20,28 @@
       rel="apple-touch-startup-image"
       href="images/apple-touch-startup-image-640x920.png"
     />
-    <title>mobili - mobile template</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="css/swiper.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/custom.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Hello World</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.custom.js"></script>
+    <script src="cordova.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+  <script src="js/index.js"></script>
   </head>
+
   <body id="mobile_wrap">
     <div class="panel-overlay"></div>
 
@@ -40,13 +61,16 @@
                     /><span>Home</span></a
                   >
                 </li>
+                <!--<li>
+                                <a href="about.html"><img src="images/icons/gray/mobile.png" alt="" title="" /><span>About</span></a>
+                            </li>-->
                 <li>
-                  <a href="about.html"
+                  <a href="#" data-popup=".popup-login" class="open-popup"
                     ><img
-                      src="images/icons/gray/mobile.png"
+                      src="images/icons/gray/lock.png"
                       alt=""
                       title=""
-                    /><span>About</span></a
+                    /><span>Login</span></a
                   >
                 </li>
                 <li>
@@ -60,114 +84,22 @@
                 </li>
 
                 <li>
-                  <a href="#" data-popup=".popup-login" class="open-popup"
-                    ><img
-                      src="images/icons/gray/lock.png"
-                      alt=""
-                      title=""
-                    /><span>Login</span></a
-                  >
-                </li>
-                <li>
-                  <a href="team.html"
-                    ><img
-                      src="images/icons/gray/users.png"
-                      alt=""
-                      title=""
-                    /><span>Team</span></a
-                  >
-                </li>
-                <li>
-                  <a href="blog.html"
+                  <a href="coming-home.html"
                     ><img
                       src="images/icons/gray/blog.png"
                       alt=""
                       title=""
-                    /><span>Blog</span></a
+                    /><span>Coming Soon</span></a
                   >
                 </li>
 
                 <li>
-                  <a href="photos.html"
-                    ><img
-                      src="images/icons/gray/photos.png"
-                      alt=""
-                      title=""
-                    /><span>Photos</span></a
-                  >
-                </li>
-                <li>
-                  <a href="videos.html"
-                    ><img
-                      src="images/icons/gray/video.png"
-                      alt=""
-                      title=""
-                    /><span>Videos</span></a
-                  >
-                </li>
-                <li>
-                  <a href="music.html"
-                    ><img
-                      src="images/icons/gray/music.png"
-                      alt=""
-                      title=""
-                    /><span>Music</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/shop.png"
-                      alt=""
-                      title=""
-                    /><span>Shop</span></a
-                  >
-                </li>
-                <li class="subnav opensubnav">
-                  <img
-                    src="images/icons/gray/categories.png"
-                    alt=""
-                    title=""
-                  /><span>Sub level menu</span>
-                </li>
-                <li>
-                  <a href="cart.html"
-                    ><img
-                      src="images/icons/gray/cart.png"
-                      alt=""
-                      title=""
-                    /><span>Cart</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="tables.html"
-                    ><img
-                      src="images/icons/gray/tables.png"
-                      alt=""
-                      title=""
-                    /><span>Tables</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="form.html"
-                    ><img
-                      src="images/icons/gray/form.png"
-                      alt=""
-                      title=""
-                    /><span>Custom Form</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="tel:012345678"
+                  <a href="mailto:mypetsyhome@gmail.com"
                     ><img
                       src="images/icons/gray/phone.png"
                       alt=""
                       title=""
-                    /><span>Call now!</span></a
+                    /><span>Mail Us!</span></a
                   >
                 </li>
                 <li>
@@ -182,163 +114,6 @@
               </ul>
             </nav>
           </div>
-          <div class="swiper-slide">
-            <div class="subnav_header backtonav">
-              <img src="images/icons/gray/back.png" alt="" title="" /><span
-                >BACK TO MAIN MENU</span
-              >
-            </div>
-            <nav class="main_nav_underline">
-              <ul>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/car.png"
-                      alt=""
-                      title=""
-                    /><span>Cars</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bus.png"
-                      alt=""
-                      title=""
-                    /><span>Buses</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bike.png"
-                      alt=""
-                      title=""
-                    /><span>Bikes</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/drink.png"
-                      alt=""
-                      title=""
-                    /><span>Drinks</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/food.png"
-                      alt=""
-                      title=""
-                    /><span>Food</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/orders.png"
-                      alt=""
-                      title=""
-                    /><span>Clothes</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/rocket.png"
-                      alt=""
-                      title=""
-                    /><span>Rockets</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/briefcase.png"
-                      alt=""
-                      title=""
-                    /><span>Accessories</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/gift.png"
-                      alt=""
-                      title=""
-                    /><span>Gifts</span></a
-                  >
-                </li>
-                <li class="subnav opensubsubnav">
-                  <img
-                    src="images/icons/gray/categories.png"
-                    alt=""
-                    title=""
-                  /><span>Third sublevel menu</span>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="swiper-slide">
-            <div class="subnav_header backtosubnav">
-              <img src="images/icons/gray/back.png" alt="" title="" /><span
-                >BACK TO 2 SUBLEVEL MENU</span
-              >
-            </div>
-            <nav class="main_nav_underline">
-              <ul>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/car.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 01</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bus.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 02</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bike.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 03</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/drink.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 04</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/food.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 05</span></a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
         </div>
       </div>
     </div>
@@ -347,7 +122,7 @@
       <div class="user_login_info">
         <div class="user_thumb">
           <div class="user_details">
-            <p>Welcome, <span>Nathalie</span></p>
+            <p>Welcome, <span>User</span></p>
           </div>
           <div class="user_avatar">
             <img src="images/avatar3.jpg" alt="" title="" />
@@ -405,11 +180,11 @@
     <div class="views">
       <div class="view view-main">
         <div class="pages">
-          <div data-page="success" class="page">
+          <div data-page="contact" class="page">
             <div class="page-content">
               <div class="navbar navbar--fixed navbar--fixed-top navbar--bg">
                 <div class="navbar__col navbar__col--title">
-                  <a href="index.html">mobili</a>
+                  <a href="index.html">My Petsy Home</a>
                 </div>
                 <div
                   class="navbar__col navbar__col--icon navbar__col--icon-right"
@@ -439,15 +214,78 @@
               </div>
 
               <div id="pages_maincontent">
+                <center>
+                  <h2 class="page_title">CONTACT US</h2>
+                </center>
+
                 <div class="page_single layout_fullwidth_padding">
-                  <div class="success_message">
-                    <span>Thank You!</span>
-                    <img src="images/icons/black/rocket.png" alt="" title="" />
-                    <p>Your Booking <br />Has Been successfully Made.</p>
+                  <h2 id="Note"></h2>
+                  <div class="contactform">
+                    <form class="" id="ContactForm" method="post" action="">
+                      <label>Name:</label>
+                      <input
+                        type="text"
+                        name="ContactName"
+                        id="ContactName"
+                        value=""
+                        class="form_input required"
+                      />
+                      <label>Email:</label>
+                      <input
+                        type="text"
+                        name="ContactEmail"
+                        id="ContactEmail"
+                        value=""
+                        class="form_input required email"
+                      />
+                      <label>Message:</label>
+                      <textarea
+                        name="ContactComment"
+                        id="ContactComment"
+                        class="form_textarea textarea required"
+                        rows=""
+                        cols=""
+                      ></textarea>
+                      <input
+                        type="submit"
+                        name="submit"
+                        class="form_submit"
+                        id="submit"
+                        value="Send"
+                      />
+                      <input
+                        class=""
+                        type="hidden"
+                        name="to"
+                        value="youremail@yourwebsite.com"
+                      />
+                      <input
+                        class=""
+                        type="hidden"
+                        name="subject"
+                        value="Contacf form message"
+                      />
+                      <label id="loader" style="display: none"
+                        ><img
+                          src="images/loader.gif"
+                          alt="Loading..."
+                          id="LoadingGraphic"
+                      /></label>
+                    </form>
                   </div>
-                  <a href="features.html" class="btn btn--full"
-                    >GO TO HOMEPAGE</a
+
+                  <h3>Our Location</h3>
+
+                  <blockquote>
+                    <!-- Adress: Malad West <br /> -->
+                    Email: mypetsyhome@gmail.com <br />
+                  </blockquote>
+
+                  <a href="tel:+900 456 567 77" class="btn btn--full"
+                    >Call Us Now!</a
                   >
+
+                  <div class="clear"></div>
                 </div>
               </div>
             </div>
@@ -459,6 +297,9 @@
     <!-- Login Popup -->
     <div class="popup popup-login">
       <div class="content-block">
+        <center>
+          <img src="app-logo.png" alt="app-logo" width="170vw" height="150vh" />
+        </center>
         <h4>LOGIN</h4>
         <div class="loginform">
           <form id="LoginForm" method="post">
@@ -658,10 +499,5 @@
         </div>
       </div>
     </div>
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/jquery.custom.js"></script>
-  </body>
+    
 </html>

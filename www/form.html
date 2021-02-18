@@ -1,3 +1,10 @@
+<script>
+if (
+  !window.localStorage.getItem("x-auth")
+) {
+  window.location = "";
+}
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,64 +16,102 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
     <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png">
     <title>mobili - mobile template</title>
-    <link rel="stylesheet" href="css/swiper.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Hello World</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.custom.js"></script>
+    <script src="cordova.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+<script src="js/index.js"></script>
+  </head>
 
 <body id="mobile_wrap">
 
     <div class="panel-overlay"></div>
 
     <div class="panel panel-left panel-reveal">
-        <!-- Slider -->
-        <div class="swiper-container-subnav multinav">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <nav class="main_nav_underline">
-                        <ul>
-                            <li>
-                                <a href="index.html"><img src="images/icons/gray/home.png" alt="" title="" /><span>Home</span></a>
-                            </li>
-                            <li>
+      <!-- Slider -->
+      <div class="swiper-container-subnav multinav">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <nav class="main_nav_underline">
+              <ul>
+                <li>
+                  <a href="index.html"
+                    ><img
+                      src="images/icons/gray/home.png"
+                      alt=""
+                      title=""
+                    /><span>Home</span></a
+                  >
+                </li>
+                <!--<li>
                                 <a href="about.html"><img src="images/icons/gray/mobile.png" alt="" title="" /><span>About</span></a>
-                            </li>
-                            <li>
-                                <a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Login</span></a>
-                            </li>
-                            <li>
-                                <a href="features.html"><img src="images/icons/gray/features.png" alt="" title="" /><span>Features</span></a>
-                            </li>
+                            </li>-->
+                <li>
+                  <a href="#" data-popup=".popup-login" class="open-popup"
+                    ><img
+                      src="images/icons/gray/lock.png"
+                      alt=""
+                      title=""
+                    /><span>Login</span></a
+                  >
+                </li>
+                <li>
+                  <a href="features.html"
+                    ><img
+                      src="images/icons/gray/features.png"
+                      alt=""
+                      title=""
+                    /><span>Features</span></a
+                  >
+                </li>
 
+                <li>
+                  <a href="coming-home.html"
+                    ><img
+                      src="images/icons/gray/blog.png"
+                      alt=""
+                      title=""
+                    /><span>Coming Soon</span></a
+                  >
+                </li>
 
-                            <li>
-                                <a href="coming-home.html"><img src="images/icons/gray/blog.png" alt="" title="" /><span>Coming Soon</span></a>
-                            </li>
-
-
-
-
-                            <li>
-                                <a href="form.html"><img src="images/icons/gray/form.png" alt="" title="" /><span>Customer Form</span></a>
-                            </li>
-
-
-                            <li>
-                                <a href="tel:012345678"><img src="images/icons/gray/phone.png" alt="" title="" /><span>Call now!</span></a>
-                            </li>
-                            <li>
-                                <a href="contact.html"><img src="images/icons/gray/contact.png" alt="" title="" /><span>Contact</span></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-
-
-
-
-            </div>
+                <li>
+                  <a href="mailto:mypetsyhome@gmail.com"
+                    ><img
+                      src="images/icons/gray/phone.png"
+                      alt=""
+                      title=""
+                    /><span>Mail Us!</span></a
+                  >
+                </li>
+                <li>
+                  <a href="contact.html"
+                    ><img
+                      src="images/icons/gray/contact.png"
+                      alt=""
+                      title=""
+                    /><span>Contact</span></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="panel panel-right panel-reveal">

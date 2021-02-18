@@ -1001,7 +1001,8 @@ z-index:9999;
 background:url(images/trans_black.png) repeat;
 }
 .slider-caption{
-width:90%;
+/* width:90%; */
+width:100%;
 position:absolute;
 left:5%;
 z-index:99999;

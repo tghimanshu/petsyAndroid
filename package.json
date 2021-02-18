@@ -1,8 +1,8 @@
 {
   "name": "com.petsyhome.main",
-  "displayName": "HelloCordova",
+  "displayName": "My Petsy Home",
   "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "description": "Your Pet Deserves the best.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
   "keywords": [
     "ecosystem:cordova"
   ],
-  "author": "Apache Cordova Team",
+  "author": "My Petsy Home Team",
   "license": "Apache-2.0",
   "devDependencies": {
     "@appcominteractive/cordova-plugin-hot-reload": "^0.2.3",

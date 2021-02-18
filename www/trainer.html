@@ -1,3 +1,10 @@
+<script>
+if (
+  !window.localStorage.getItem("x-auth")
+) {
+  window.location = "";
+}
+</script>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,6 +39,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+  <script src="js/index.js"></script>
   </head>
   <body id="mobile_wrap">
     <div class="panel-overlay"></div>
@@ -52,13 +60,16 @@
                     /><span>Home</span></a
                   >
                 </li>
+                <!--<li>
+                                <a href="about.html"><img src="images/icons/gray/mobile.png" alt="" title="" /><span>About</span></a>
+                            </li>-->
                 <li>
-                  <a href="about.html"
+                  <a href="#" data-popup=".popup-rate-us" class="open-popup"
                     ><img
-                      src="images/icons/gray/mobile.png"
+                      src="images/icons/gray/lock.png"
                       alt=""
                       title=""
-                    /><span>About</span></a
+                    /><span>Rate Us</span></a
                   >
                 </li>
                 <li>
@@ -72,114 +83,22 @@
                 </li>
 
                 <li>
-                  <a href="#" data-popup=".popup-login" class="open-popup"
-                    ><img
-                      src="images/icons/gray/lock.png"
-                      alt=""
-                      title=""
-                    /><span>Login</span></a
-                  >
-                </li>
-                <li>
-                  <a href="team.html"
-                    ><img
-                      src="images/icons/gray/users.png"
-                      alt=""
-                      title=""
-                    /><span>Team</span></a
-                  >
-                </li>
-                <li>
-                  <a href="blog.html"
+                  <a href="coming-home.html"
                     ><img
                       src="images/icons/gray/blog.png"
                       alt=""
                       title=""
-                    /><span>Blog</span></a
+                    /><span>Coming Soon</span></a
                   >
                 </li>
 
                 <li>
-                  <a href="photos.html"
-                    ><img
-                      src="images/icons/gray/photos.png"
-                      alt=""
-                      title=""
-                    /><span>Photos</span></a
-                  >
-                </li>
-                <li>
-                  <a href="videos.html"
-                    ><img
-                      src="images/icons/gray/video.png"
-                      alt=""
-                      title=""
-                    /><span>Videos</span></a
-                  >
-                </li>
-                <li>
-                  <a href="music.html"
-                    ><img
-                      src="images/icons/gray/music.png"
-                      alt=""
-                      title=""
-                    /><span>Music</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/shop.png"
-                      alt=""
-                      title=""
-                    /><span>Shop</span></a
-                  >
-                </li>
-                <li class="subnav opensubnav">
-                  <img
-                    src="images/icons/gray/categories.png"
-                    alt=""
-                    title=""
-                  /><span>Sub level menu</span>
-                </li>
-                <li>
-                  <a href="cart.html"
-                    ><img
-                      src="images/icons/gray/cart.png"
-                      alt=""
-                      title=""
-                    /><span>Cart</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="tables.html"
-                    ><img
-                      src="images/icons/gray/tables.png"
-                      alt=""
-                      title=""
-                    /><span>Tables</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="form.html"
-                    ><img
-                      src="images/icons/gray/form.png"
-                      alt=""
-                      title=""
-                    /><span>Custom Form</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="tel:012345678"
+                  <a href="mailto:mypetsyhome@gmail.com"
                     ><img
                       src="images/icons/gray/phone.png"
                       alt=""
                       title=""
-                    /><span>Call now!</span></a
+                    /><span>Mail Us!</span></a
                   >
                 </li>
                 <li>
@@ -189,163 +108,6 @@
                       alt=""
                       title=""
                     /><span>Contact</span></a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="swiper-slide">
-            <div class="subnav_header backtonav">
-              <img src="images/icons/gray/back.png" alt="" title="" /><span
-                >BACK TO MAIN MENU</span
-              >
-            </div>
-            <nav class="main_nav_underline">
-              <ul>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/car.png"
-                      alt=""
-                      title=""
-                    /><span>Cars</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bus.png"
-                      alt=""
-                      title=""
-                    /><span>Buses</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bike.png"
-                      alt=""
-                      title=""
-                    /><span>Bikes</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/drink.png"
-                      alt=""
-                      title=""
-                    /><span>Drinks</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/food.png"
-                      alt=""
-                      title=""
-                    /><span>Food</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/orders.png"
-                      alt=""
-                      title=""
-                    /><span>Clothes</span></a
-                  >
-                </li>
-
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/rocket.png"
-                      alt=""
-                      title=""
-                    /><span>Rockets</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/briefcase.png"
-                      alt=""
-                      title=""
-                    /><span>Accessories</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/gift.png"
-                      alt=""
-                      title=""
-                    /><span>Gifts</span></a
-                  >
-                </li>
-                <li class="subnav opensubsubnav">
-                  <img
-                    src="images/icons/gray/categories.png"
-                    alt=""
-                    title=""
-                  /><span>Third sublevel menu</span>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="swiper-slide">
-            <div class="subnav_header backtosubnav">
-              <img src="images/icons/gray/back.png" alt="" title="" /><span
-                >BACK TO 2 SUBLEVEL MENU</span
-              >
-            </div>
-            <nav class="main_nav_underline">
-              <ul>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/car.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 01</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bus.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 02</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/bike.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 03</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/drink.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 04</span></a
-                  >
-                </li>
-                <li>
-                  <a href="shop.html"
-                    ><img
-                      src="images/icons/gray/food.png"
-                      alt=""
-                      title=""
-                    /><span>Subcategory 05</span></a
                   >
                 </li>
               </ul>
@@ -440,44 +202,41 @@
               </div>
 
               <div id="pages_maincontent">
-                <h3 class="trainer_name">Trainer's Name</h3>
+                <h3 class="trainer_name">ANIKET</h3>
 
                 <div class="page_single layout_fullwidth_padding">
                   <div class="shop_item">
                     <div class="shop_thumb">
                       <div class="shop_thumb_gallery">
-                        <a href="images/photos/photo1.jpg" title="Photo title"
+                        <a title="Photo title"
                           ><img src="images/petsy/trainer.jpg" alt="" title=""
                         /></a>
                       </div>
                     </div>
                     <div class="shop_item_details">
-                      <h3>CONSULTATION SUMMARY</h3>
+                      <h3>PERSONAL SUMMARY</h3>
                       <p>
-                        Pets are beautiful creatures with diverse and
-                        complicated behavioural patterns. So it is not
-                        sufficient to just teach them commands, but it is also
-                        important to understand them and their behaviour. My
-                        main intent is to help you connect with your pet so you
-                        van easily communicate your thoughts as you would want
-                        to with your pet.
+                        I ensure pets become family. They are beautiful
+                        creatures with diverse and complicated behavioural
+                        patterns. So it is not sufficient to just teach them
+                        commands, but it is also important to understand them
+                        and their particular behaviour. My main intent is to
+                        help you connect with your pet so you can easily
+                        communicate your thoughts as you would want to with your
+                        friend. Once you connect with your pet, it is much
+                        easier to train your pets and you will never face any
+                        problems. A CRUELTY FREE Program where you make your 4
+                        legged friend Obedient and a part of your family
                       </p>
-                      <p>
-                        <strong>SESSION:</strong> <a href="shop.html">1 Hour</a>
-                      </p>
-                      <h3>SELECT DATE</h3>
+
                       <div class="trainer_form_container">
-                        <form id="trainerForm">
-                          <input
-                            type="date"
-                            name="trainer_date"
-                            class="trainer_form_input"
-                            id="trainer_date"
-                          />
-                          <button type="submit" class="btn btn--full">
-                            Request Appointment
-                          </button>
-                        </form>
+                        <a
+                          type="#"
+                          data-popup=".popup-choose"
+                          class="open-popup btn btn--full"
+                        >
+                          Request an Appointment
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -489,99 +248,178 @@
       </div>
     </div>
 
-    <!-- Login Popup -->
-    <div class="popup popup-login">
-      <div class="content-block">
-        <h4>LOGIN</h4>
-        <div class="loginform">
-          <form id="LoginForm" method="post">
-            <input
-              type="text"
-              name="Username"
-              value=""
-              class="form_input required"
-              placeholder="username"
-            />
-            <input
-              type="password"
-              name="Password"
-              value=""
-              class="form_input required"
-              placeholder="password"
-            />
-            <div class="forgot_pass">
-              <a href="#" data-popup=".popup-forgot" class="open-popup"
-                >Forgot Password?</a
-              >
+    <!-- Choose Training Grooming Popup -->
+    <div class="popup popup-choose">
+      <div class="choosing-container">
+        <div class="content-choosing-block">
+          <h4>CHOOSE</h4>
+          <div class="chooseTrainingGrooming">
+            <a
+              type="#"
+              data-popup=".popup-training"
+              class="open-popup btn btn--full"
+              >TRAINING</a
+            >
+            <h3 style="margin: 0; padding: 10px auto">OR</h3>
+            <a
+              type="#"
+              data-popup=".popup-grooming"
+              class="open-popup btn btn--full"
+              >BEHAVIOURAL CONSULTATION</a
+            >
+          </div>
+          <div class="close_popup_button">
+            <a href="#" class="close-popup" data-popup=".popup-choose"
+              ><img src="images/icons/black/menu_close.png" alt="" title=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rate Us Popup -->
+    <div class="popup popup-rate-us">
+      <div class="choosing-container">
+        <div class="content-choosing-block">
+          <h4>RATE US</h4>
+          <form id="rateForm" class="chooseTrainingGrooming">
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label for="star1" title="text">1 star</label>
             </div>
+            <textarea
+              name="rateText"
+              id="rateText"
+              placeholder="Enter your Review...."
+              rows="5"
+            ></textarea>
             <input
               type="submit"
               name="submit"
-              class="form_submit"
-              id="submit"
-              value="SIGN IN"
+              value="SUBMIT"
+              id="rateSubmit"
+              class="btn btn--full"
             />
           </form>
-          <div class="signup_bottom">
-            <p>Don't have an account?</p>
-            <a href="#" data-popup=".popup-signup" class="open-popup"
-              >SIGN UP</a
-            >
+          <div class="close_popup_button">
+            <a href="#" class="close-popup" data-popup=".popup-rate-us"
+              ><img src="images/icons/black/menu_close.png" alt="" title=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Training Popup -->
+    <div class="popup popup-training">
+      <div class="content-block">
+        <h4>TRAINING</h4>
+        <div class="shop_item_details">
+          <h3>Training Module</h3>
+          <ul>
+            <li>
+              <strong>Basic obedience training</strong>
+            </li>
+            <li>
+              <strong
+                >Agility training (Jump, crawl, running, retrieving)</strong
+              >
+            </li>
+            <li>
+              <strong>Socialization ( This is very important)</strong>
+            </li>
+            <li>
+              <strong
+                >Heeling (on leash, Loose leash, off leash, focus
+                heeling)</strong
+              >
+            </li>
+            <li>
+              <strong
+                >Advanced training ( Speak, growl, attack, leave, sniffing and
+                searching)</strong
+              >
+            </li>
+            <li>
+              <strong
+                >Extra tricks ( Any tricks that you like or see on social
+                media)</strong
+              >
+            </li>
+            <li>
+              <strong>Behaviour training</strong>
+            </li>
+          </ul>
+          <h3>Training Fees:</h3>
+          <p>1000/- per session</p>
+          <h3>session Time:</h3>
+          <p>1 Hour</p>
+          <h3>Duration:</h3>
+          <p>2 Months</p>
+          <h3>Sessions:</h3>
+          <p>24 Sessions</p>
+          <h3>Time:</h3>
+          <p>Between 9am - 9pm</p>
+          <h3>SELECT DATE</h3>
+          <div class="trainer_form_container">
+            <form id="trainerForm">
+              <input
+                type="date"
+                name="trainer_date"
+                class="trainer_form_input"
+                id="trainer_date"
+              />
+              <button type="submit" class="btn btn--full">
+                Request Appointment
+              </button>
+            </form>
           </div>
         </div>
         <div class="close_popup_button">
-          <a href="#" class="close-popup" data-popup=".popup-login"
+          <a href="#" class="close-popup" data-popup=".popup-training"
             ><img src="images/icons/black/menu_close.png" alt="" title=""
           /></a>
         </div>
       </div>
     </div>
-
-    <!-- Register Popup -->
-    <div class="popup popup-signup">
+    <!-- Grooming Popup -->
+    <div class="popup popup-grooming">
       <div class="content-block">
-        <h4>REGISTER</h4>
-        <div class="loginform">
-          <form id="RegisterForm" method="post">
-            <input
-              type="text"
-              name="Username"
-              value=""
-              class="form_input required"
-              placeholder="Username"
-            />
-            <input
-              type="text"
-              name="Email"
-              value=""
-              class="form_input required"
-              placeholder="Email"
-            />
-            <input
-              type="password"
-              name="Password"
-              value=""
-              class="form_input required"
-              placeholder="Password"
-            />
-            <input
-              type="submit"
-              name="submit"
-              class="form_submit"
-              id="submitregister"
-              value="SIGN UP"
-            />
-          </form>
-          <h5>- OR REGISTER WITH A SOCIAL ACCOUNT -</h5>
-          <div class="signup_social">
-            <a href="http://www.facebook.com/" class="signup_facebook"
-              >FACEBOOK</a
-            >
-            <a href="http://www.twitter.com/" class="signup_twitter">TWITTER</a>
+        <h4>BEHAVIOUR CONSULTATION</h4>
+        <div class="shop_item_details">
+          <h3>Why Do We Need Behaviourist?</h3>
+          <p>
+            Any type of aggression, including, but not limited to,
+            resource-guarding, growling, biting in the home and at other dogs or
+            any people, especially children, should be referred to a behaviorist
+          </p>
+          <h3>Consultation Fees:</h3>
+          <p>1000/- per session</p>
+          <h3>SELECT DATE</h3>
+          <div class="trainer_form_container">
+            <form id="trainerForm">
+              <input
+                type="date"
+                name="trainer_date"
+                class="trainer_form_input"
+                id="trainer_date"
+              />
+              <button type="submit" class="btn btn--full">
+                Request Appointment
+              </button>
+            </form>
           </div>
         </div>
         <div class="close_popup_button">
-          <a href="#" class="close-popup" data-popup=".popup-signup"
+          <a href="#" class="close-popup" data-popup=".popup-grooming"
             ><img src="images/icons/black/menu_close.png" alt="" title=""
           /></a>
         </div>
@@ -691,6 +529,5 @@
         </div>
       </div>
     </div>
-    <script type="module" src="js/index.js"></script>
-  </body>
+    
 </html>

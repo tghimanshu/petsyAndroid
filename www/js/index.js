@@ -1,17 +1,11 @@
 document.addEventListener("deviceready", onDeviceReady, false);
-if (
-  !window.localStorage.getItem("x-auth") &&
-  window.location.pathname !== "/" &&
-  window.location.pathname !== "/index.html"
-) {
-  window.location = "/";
-} else if (
-  window.localStorage.getItem("x-auth") &&
-  (window.location.pathname === "/" ||
-    window.location.pathname === "/index.html")
-) {
-  window.location = "features.html";
-}
+// if (
+//   !window.localStorage.getItem("x-auth") &&
+//   window.location.pathname !== "/" &&
+//   window.location.pathname !== "/index.html"
+// ) {
+//   window.location = "/";
+// } else
 
 function onDeviceReady() {
   // Your web app's Firebase configuration
@@ -67,19 +61,27 @@ function onDeviceReady() {
 
     let myPet = window.localStorage.getItem("pet");
     console.log(myPet);
-    if (window.location.pathname.includes("/toggle.html")) {
+    if (
+      window.location.pathname.includes("toggle.html") ||
+      window.location.pathname.includes("features.html")
+    ) {
       switch (myPet) {
-        case "cat":
+        case "dog":
           $("#tab1")[0].checked = true;
           break;
-        case "dog":
+        case "cat":
           $("#tab2")[0].checked = true;
           break;
       }
     }
 
     // booking trainer
-    if (window.location.pathname.includes("/trainer.html")) {
+    if (window.location.pathname.includes("trainer.html")) {
+      console.log($("#rateForm"));
+      $("#rateForm").submit(function (e) {
+        e.preventDefault();
+        console.log($("#rate")[0].value, $("#rateText")[0].value);
+      });
       $("#trainerForm").submit(function (e) {
         e.preventDefault();
         const date = $("#trainer_date")[0].value;
@@ -209,7 +211,9 @@ function onDeviceReady() {
             .doc(user.uid)
             .get()
             .then((doc) => {
+              const data = doc.data();
               window.localStorage.setItem("x-auth", JSON.stringify(doc.data()));
+              window.localStorage.setItem("pet", data.pet);
               window.location = "features.html";
             })
             .catch((err) => console.log(err));

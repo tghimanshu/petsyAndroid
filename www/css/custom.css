@@ -30,3 +30,93 @@
   margin-left: 1px;
   margin-bottom: 20px;
 }
+
+.coming-soon {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+input.form_submit {
+  width: 100%;
+  margin: 10px 0 0 0;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 300;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  color: #fff;
+  background-color: #4f40f1;
+  background: -webkit-linear-gradient(60deg, #4f40f1, #6100bc);
+  background: linear-gradient(60deg, #4f40f1, #6100bc);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 10px 0px;
+}
+
+.chooseTrainingGrooming {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.choosing-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.content-choosing-block {
+  padding: 25px 5%;
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Rate Us */
+
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+#rateText {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
